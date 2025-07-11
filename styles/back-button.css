@@ -1,0 +1,71 @@
+.back {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    overflow: hidden;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    z-index: 1;
+    position: relative; /* for pseudo elements */
+}
+
+.back:before,
+.back:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 7px;
+}
+
+.back:before {
+    border: 2px solid var(--text-muted);
+    transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+        transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.back:after {
+    border: 2px solid var(--highlight);
+    transform: scale(1.3);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+}
+
+.back:hover:before,
+.back:focus:before {
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.back:hover:after,
+.back:focus:after {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+        transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.button-box {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.button-elem {
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: 18px 31px 0 15px;
+    transform: rotate(180deg);
+    fill: var(--text-muted);
+}
+
+.back:hover .button-box,
+.back:focus .button-box {
+    transition: 0.4s;
+    transform: translateX(-56px);
+}

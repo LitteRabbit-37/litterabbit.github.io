@@ -1,0 +1,398 @@
+:root[data-theme="dark"] {
+    --bg-dark: hsl(0, 0%, 3.9%);
+    --bg: hsl(0, 0%, 10.6%);
+    --bg-light: hsl(0, 0%, 17%);
+    --text: hsl(0, 0%, 95.7%);
+    --text-muted: hsl(0, 0%, 73.7%);
+    --stoke: hsl(0, 0%, 44.7%);
+    --highlight: hsl(253, 81%, 56%);
+    --highlightDarker: hsl(253, 81%, 24%);
+    --danger: hsl(354, 76%, 44%);
+}
+
+:root[data-theme="light"] {
+    --bg-dark: hsl(0, 0%, 83%);
+    --bg: hsl(0, 0%, 89.4%);
+    --bg-light: hsl(0, 0%, 96.1%);
+    --text: hsl(0, 0%, 4.3%);
+    --text-muted: hsl(0, 0%, 26.3%);
+    --stoke: hsl(0, 0%, 55.3%);
+    --highlight: hsl(253, 81%, 56%);
+    --highlightDarker: hsl(253, 81%, 76%);
+    --danger: hsl(354, 92%, 66%);
+}
+
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Source code pro", monospace;
+    font-weight: 400;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+/* ========= Header Section ========= */
+.app-header {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 0 16px;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.header-left,
+.header-center,
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-left {
+    flex: 0 0 auto;
+}
+.header-center {
+    flex: 1 1 auto;
+    justify-content: center;
+}
+.header-right {
+    flex: 0 0 auto;
+}
+
+/* ========= Navbar Section ========= */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+    height: 50px;
+    width: 100%;
+    max-width: 300px;
+    border: solid 1px var(--stroke);
+    border-radius: 30px;
+    background-color: transparent;
+    box-shadow: 0px 0px 40px -22px var(--text) inset;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    z-index: 1500;
+}
+
+.navbar-center {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.navbar-logo-name svg {
+    width: 45px;
+}
+
+.navbar-logo-name path {
+    fill: var(--text);
+}
+
+.navbar-logo-name svg:hover {
+    rotate: 360deg;
+    transition: rotate 0.5s ease-in-out;
+}
+
+main {
+    flex: 1 0 auto;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    padding: 0;
+    pointer-events: none;
+}
+
+footer {
+    width: 100%;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: auto;
+    z-index: 100;
+    background: none;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    pointer-events: none;
+}
+
+@keyframes bunnyJump {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    20% {
+        transform: translateY(-24px) scale(1.08);
+    }
+    40% {
+        transform: translateY(0) scale(0.92);
+    }
+    70% {
+        transform: translateY(-12px) scale(1.04);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+.bunny-animate {
+    animation: bunnyJump 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--bg);
+}
+
+/* ========================================== */
+/* ============== MAIN CONTENT ============== */
+
+/* --- Title --- */
+.main-title {
+    letter-spacing: -8px;
+    font-size: 100px;
+    color: var(--text);
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    align-self: center;
+    height: 345px;
+    z-index: 90;
+}
+
+.main-title span {
+    pointer-events: auto;
+}
+
+.litterabbit-text-highlight {
+    color: var(--highlight);
+}
+
+.main-title > span:nth-child(1) {
+    align-self: flex-start;
+}
+.main-title > span:nth-child(2) {
+    align-self: flex-end;
+}
+.main-title > span:nth-child(3) {
+    align-self: flex-end;
+}
+
+.letter {
+    display: inline-block;
+    transition: color 0.2s;
+    position: relative;
+}
+
+/* --- Main buttons --- */
+.principal-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
+    height: 50px;
+    width: 160px;
+    z-index: 90;
+}
+
+.principal-button button {
+    height: 50px;
+    width: 160px;
+    border: none;
+    border-radius: 13px;
+    color: var(--text);
+    background-color: var(--bg);
+    box-shadow: 0px 0px 40px -22px var(--text) inset;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: translateY(0px);
+    transition: all 0.2s ease;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.principal-button:hover > button {
+    transform: translateY(5px);
+    box-shadow: 0px 0px 40px -22px var(--highlight) inset;
+}
+
+.principal-button.first {
+    top: 17%;
+    right: 25%;
+}
+
+.principal-button.sec {
+    bottom: 25%;
+    left: 15%;
+}
+
+.principal-button.third {
+    bottom: 13%;
+    right: 10%;
+}
+
+/* ========================================== */
+/* ============== MODAL STYLES ============== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: backdrop-filter 0.2s;
+    pointer-events: auto;
+}
+
+.modal-content {
+    width: 400px;
+    color: var(--text);
+    border-radius: 13px;
+    padding: 40px;
+    text-align: center;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: var(--bg);
+    color: var(--text);
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 5px;
+    cursor: pointer;
+    transition: background 0.16s;
+}
+
+.close-modal:hover {
+    background: var(--bg-dark);
+}
+
+.app-card-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.app-card img {
+    height: 20px;
+}
+
+/* --- Modal for "Why LitteRabbit?" --- */
+.explanation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ========================================== */
+/* ============= OUR APP STYLES ============= */
+
+/* --- Modal for "Our App" --- */
+.apps-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.app-card {
+    background: var(--bg-light);
+    border-radius: 13px;
+    min-width: 220px;
+    max-width: 280px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    transition: transform 0.16s;
+}
+.app-card:hover {
+    transform: translateY(-6px) scale(1.035);
+}
+.app-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.app-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: justify;
+}
+
+.discover-btn {
+    background: var(--bg);
+    color: var(--text);
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 10px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background 0.13s;
+}
+
+.discover-btn:hover {
+    background: var(--bg-dark);
+    color: var(--highlight);
+}

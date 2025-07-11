@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>LitteLang</title>
+        <link rel="icon" href="assets/littelang_logo.png" type="image/png" />
+        <link rel="stylesheet" href="styles/littelang.css" />
+        <link rel="stylesheet" href="styles/littelang-responsive.css" />
+        <link rel="stylesheet" href="styles/theme-toggle.css" />
+        <link rel="stylesheet" href="styles/back-button.css" />
+        <link rel="stylesheet" href="styles/littelang-price.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <header class="app-header">
+            <div class="header-left">
+                <!-- Back button -->
+                <a href="/">
+                    <button class="back">
+                        <div class="button-box">
+                            <span class="button-elem">
+                                <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+                                    ></path>
+                                </svg>
+                            </span>
+                            <span class="button-elem">
+                                <svg viewBox="0 0 46 40">
+                                    <path
+                                        d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+                                    ></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </button>
+                </a>
+            </div>
+            <div class="header-center">
+                <!-- Navbar -->
+                <nav id="navbar">
+                    <div class="navbar-left">
+                        <div class="navbar-logo-name">
+                            <img src="assets/littelang_logo.png" alt="LitteLang Logo" id="navbar-logo" />
+                            <span class="navbar-logo-text">LitteLang</span>
+                        </div>
+                    </div>
+
+                    <div class="navbar-right">
+                        <button class="hamburger-menu">
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                        </button>
+                        <div class="navbar-links">
+                            <span class="site-link"><a href="littelang.html#features">Features</a></span>
+                            <span class="site-link"><a href="littelang.html#benefits">Benefits</a></span>
+                            <span class="site-link"><a href="littelang.html#faq">Question</a></span>
+                            <div class="navbar-buttons">
+                                <a href="littelang.html#pricing">
+                                    <button id="button-buy"><strong>Buy</strong></button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="header-right">
+                <!-- Theme toggle -->
+                <label id="theme-toggle" for="themeToggle" class="themeToggle st-sunMoonThemeToggleBtn" type="checkbox">
+                    <input type="checkbox" id="themeToggle" class="themeToggleInput" />
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" stroke="none">
+                        <mask id="moon-mask">
+                            <rect x="0" y="0" width="20" height="20" fill="white"></rect>
+                            <circle cx="11" cy="3" r="8" fill="black"></circle>
+                        </mask>
+                        <circle class="sunMoon" cx="10" cy="10" r="8" mask="url(#moon-mask)"></circle>
+                        <g>
+                            <circle class="sunRay sunRay1" cx="18" cy="10" r="1.5"></circle>
+                            <circle class="sunRay sunRay2" cx="14" cy="16.928" r="1.5"></circle>
+                            <circle class="sunRay sunRay3" cx="6" cy="16.928" r="1.5"></circle>
+                            <circle class="sunRay sunRay4" cx="2" cy="10" r="1.5"></circle>
+                            <circle class="sunRay sunRay5" cx="6" cy="3.1718" r="1.5"></circle>
+                            <circle class="sunRay sunRay6" cx="14" cy="3.1718" r="1.5"></circle>
+                        </g>
+                    </svg>
+                </label>
+            </div>
+        </header>
+
+        <main class="app-wrapper">
+            <section id="hero" class="hero">
+                <div class="hero-tag">
+                    <span class="hero-tag-text">Local AI • Developers • Multilingual</span>
+                </div>
+                <div class="hero-title">
+                    <span class="hero-title-text"
+                        >The tool <span class="littelang-text-highlight">app</span> for power users</span
+                    >
+                </div>
+                <div class="hero-subtitle">
+                    <span class="hero-subtitle-text">
+                        Improve, correct and translate your code comments with local artificial intelligence. Your data
+                        remains private.
+                    </span>
+                </div>
+                <div class="hero-keywords">
+                    <div class="hero-keyword-tab">
+                        <span class="hero-keyword-icon zap"
+                            ><img class="svg zap-svg" data-src="/assets/zap.svg"/>
+                        </span>
+                        <span class="hero-keyword-text">Local AI with Ollama</span>
+                    </div>
+                    <div class="hero-keyword-tab">
+                        <span class="hero-keyword-icon shield">
+                            <img class="svg shield-svg" data-src="/assets/shield.svg"/>
+                        </svg>
+                        </span>
+                        <span class="hero-keyword-text">100% private</span>
+                    </div>
+                    <div class="hero-keyword-tab">
+                        <span class="hero-keyword-icon code">
+                            <img class="svg code-svg" data-src="/assets/code.svg"/>
+                        </span>
+                        <span class="hero-keyword-text">Optimised Developers</span>
+                    </div>
+                </div>
+                <a href="littelang.html#features"
+                    ><button id="button-features"><strong>Discover features</strong></button></a
+                >
+            </section>
+
+            <section id="features" class="features">
+                <div class="features-card">
+                    <div class="features-title">
+                        <span class="features-subtitle-text">
+                            Main
+                            <span class="littelang-text-highlight">features</span>
+                        </span>
+                    </div>
+                    <div class="features-subtitle">
+                        <span class="features-subtitle-text">
+                            LitteLang combines the power of local AI and DeepL with a modern interface to transform your
+                            development workflow.
+                        </span>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-item feature-a">
+                            <div class="feature-a-background">
+                                <span class="feature-background-ollama"><img class="svg ollama-svg" data-src="/assets/ollama.svg" /></span>
+                            </div>
+                            <div class="feature-header">
+                                <span class="feature-icon"><img class="svg bot-svg" data-src="/assets/bot.svg" /></span>
+                                <span class="feature-title">Powerful local AI</span>
+                            </div>
+                            <span class="feature-description"
+                                >Use Ollama to run IA models directly on your machine, with no Internet connection
+                                required.
+                            </span>
+                            <div class="panel-system">
+                                <div class="system-status">
+                                    <span class="status-indicator"></span>
+                                    <span class="status-text">Gemma AI</span>
+                                </div>
+                                <div class="system-status">
+                                    <span class="status-indicator"></span>
+                                    <span class="status-text">CodeGemma AI</span>
+                                </div>
+                                <div class="system-status">
+                                    <span class="status-indicator"></span>
+                                    <span class="status-text">CodeLlama AI</span>
+                                </div>
+                                <div class="system-status">
+                                    <span class="status-indicator"></span>
+                                    <span class="status-text">CodeQwen AI</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-item feature-b">
+                            <div class="feature-b-background">
+                                <span class="feature-background-globe"><img class="svg globe-svg" data-src="/assets/globe.svg" /></span>
+                            </div>
+                            <div class="feature-header">
+                                <span class="feature-icon"><img class="svg languages-svg" data-src="/assets/languages.svg" /></span>
+                                <span class="feature-title translation">Multilingual translation</span>
+                            </div>
+                            <span class="feature-description">
+                                Translate your comments in real time with DeepL (optional) or local templates for full
+                                multilingual support.
+                            </span>
+                            <div class="loader">
+                                <span>// </span>
+                                <div class="words">
+                                    <span class="word">Hello, world!</span>
+                                    <span class="word">Bonjour le monde !</span>
+                                    <span class="word">Hallo, Welt!</span>
+                                    <span class="word">¡Hola, mundo!</span>
+                                    <span class="word">Ciao, mondo!</span>
+                                    <span class="word">こんにちは世界！</span>
+                                    <span class="word">안녕하세요, 세계!</span>
+                                    <span class="word">Привет, мир!</span>
+                                    <span class="word">Olá, mundo!</span>
+                                    <span class="word">مرحبا بالعالم</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-item feature-c">
+                            <div class="feature-c-background">
+                                <span class="feature-background-lock"><img class="svg binary-svg" data-src="/assets/binary.svg" /></span>
+                            </div>
+                            <div class="feature-header">
+                                <span class="feature-icon"><img class="svg shield-svg" data-src="/assets/shield.svg" /></span>
+                                <span class="feature-title confidentiality">Total confidentiality</span>
+                            </div>
+                            <span class="feature-description"
+                                >Your data remains on your machine. No information is sent online, unless you activate
+                                DeepL.</span
+                            >
+                        </div>
+                        <div class="feature-item feature-d">
+                            <div class="feature-d-background"></div>
+                            <div class="feature-header">
+                                <span class="feature-icon"><img class="svg code-svg" data-src="/assets/code.svg" /></span>
+                                <span class="feature-title enhancement">Code enhancement</span>
+                            </div>
+                            <span class="feature-description"
+                                >Automatically correct the grammar, style and clarity of your comments for a more
+                                professional code.</span
+                            >
+                            <div class="feature-enhancement">
+  <pre class="pre">
+    <span class="comment"># This is code</span>
+    <span class="cmd"># Display greetings</span>
+  </pre>
+  <div class="code-feature-enhancement">
+  <span class="kw">print</span><span class="var">(</span><span class="str">"Hello World!"</span><span class="var">)</span>
+</div>
+</div>
+                        </div>
+                        <div class="feature-item feature-e">
+                            <div class="feature-e-background-gradient"></div>
+                            <div class="feature-e-background"></div>
+                            <div class="feature-header">
+                                <span class="feature-icon"><img class="svg settings-svg" data-src="/assets/settings.svg" /></span>
+                                <span class="feature-title flexible">Intelligent Comment Extraction</span>
+                            </div>
+                            <span class="feature-description"
+                                >Instantly detect and extract comments from your code, no matter the language.</span
+                            >
+                            <div class="code-card-container">
+                            <div class="code-card">
+
+<!-- =============  CODE AVEC SPANS COLORES  ============= -->
+<pre class="code-layer"><code>
+<span class="com"># Python code</span>
+
+<span class="com"># Set initial value</span>
+<span class="code var">count = </span><span class="code num">10</span><span class="com"> # Number of retries</span>
+
+<span class="code kw">def</span><span class="code fn"> double</span><span class="code var"> (n):</span>
+    <span class="com">   """Return twice the input number."""</span>
+    <span class="code kw">return</span><span class="code var"> n * </span><span class="code num">2</span>
+
+<span class="code var">fake_comment = </span><span class="code str">"# this is not a comment"</span> 
+<span class="com"># Real comment here</span>
+
+<span class="com"># Multi-line with special symbols:</span>
+<span class="com">"""</span>
+<span class="com">Hello world, just for fun!</span>
+<span class="com">"""</span>
+
+<span class="code kw">print</span><span class="code var">(</span><span class="code fn">double</span><span class="code var">(count))</span><span class="com"> # Output: 20</span>
+</code></pre>
+
+<!-- =============  COMMENTAIRES SEULS  ============= -->
+<pre class="comments-layer"><code>
+<span class="com"># Python code</span>
+
+<span class="com"># Set initial value</span>
+<span class="code var">count = </span><span class="code num">10</span><span class="com"> # Number of retries</span>
+
+<span class="code kw">def</span><span class="code fn"> double</span><span class="code var"> (n):</span>
+    <span class="com">   """Return twice the input number."""</span>
+    <span class="code kw">return</span><span class="code var"> n * </span><span class="code num">2</span>
+
+<span class="code var">fake_comment = </span><span class="code str">"# this is not a comment"</span> 
+<span class="com"># Real comment here</span>
+
+<span class="com"># Multi-line with special symbols:</span>
+<span class="com">"""</span>
+<span class="com">Hello world, just for fun!</span>
+<span class="com">"""</span>
+
+<span class="code kw">print</span><span class="code var">(</span><span class="code fn">double</span><span class="code var">(count))</span><span class="com"> # Output: 20</span>
+</code></pre>
+
+                            </div>
+                            </div>
+                        </div>
+                        <div class="feature-item feature-f">
+                            <div class="feature-f-button-group">
+                                <button class="feature-f-button">
+                                    <span class="feature-button-icon"><img class="svg apple-svg" data-src="/assets/apple.svg" /></span>
+                                </button>
+                                <button class="feature-f-button">
+                                    <span class="feature-button-icon"><img class="svg microsoft-svg" data-src="/assets/microsoft.svg" /></span>
+                                </button>
+                                <button class="feature-f-button">
+                                    <span class="feature-button-icon"><img class="svg linux-svg" data-src="/assets/linux.svg" /></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="benefits" class="why-choose">
+                <div class="why-choose-card">
+                    <div class="why-choose-title">
+                        <span class="why-choose-title-text">
+                            Why choose
+                            <span class="littelang-text-highlight">LitteLang?</span>
+                        </span>
+                    </div>
+                    <div class="why-choose-subtitle">
+                        <span class="why-choose-subtitle-text">
+                            Discover the advantages that make LitteLang the ideal tool for developers who want to improve their code and workflow.
+                        </span>
+                    </div>
+                    <div class ="why-choose-container">
+                        <div class="why-choose-list">
+                            <div class="why-choose-text">
+                                <span class="littelang-highlight">Up to 192</span>
+                                <span class="why-choose-line">programming languages</span>
+                            </div>
+                            <div class="why-choose-text">
+                                <span class="littelang-highlight">Up to 28</span>
+                                <span class="why-choose-line">human languages</span>
+                            </div>
+                            <div class="why-choose-text">
+                                <span class="littelang-highlight">Unlimited</span>
+                                <span class="why-choose-line">AI-powered translations</span>
+                            </div>
+                            <div class="why-choose-text">
+                                <span class="littelang-highlight">One-time</span>
+                                <span class="why-choose-line">purchase</span>
+                            </div>
+                        </div>
+                        <div class="why-choose-grid">
+                            <div class="why-choose-item">
+                                <div class="why-choose-icon">
+                                    <img class="svg gauge-svg" data-src="/assets/gauge.svg"/>
+                                </div>
+                                <div class="why-choose-item-title">Increased Productivity</div>
+                                <div class="why-choose-item-description">
+                                    Automate the correction and translation of your comments to focus on what really matters: coding.
+                                </div>
+                            </div>
+                            <div class="why-choose-item">
+                                <div class="why-choose-icon">
+                                    <img class="svg code-svg" data-src="/assets/code.svg"/>
+                                </div>
+                                <div class="why-choose-item-title">Improved Code Quality</div>
+                                <div class="why-choose-item-description">
+                                    Maintain clear, consistent, and professional comments for better readability and easier maintenance.
+                                </div>
+                            </div>
+                            <div class="why-choose-item">
+                                <div class="why-choose-icon">
+                                    <img class="svg shredder-svg" data-src="/assets/shredder.svg"/>
+                                </div>
+                                <div class="why-choose-item-title">Guaranteed Confidentiality</div>
+                                <div class="why-choose-item-description">
+                                    With local AI, your code never leaves your machine, ensuring total security for your sensitive data.
+                                </div>
+                            </div>
+                            <div class="why-choose-item">
+                                <div class="why-choose-icon">
+                                    <img class="svg earth-svg" data-src="/assets/earth.svg"/>
+                                </div>
+                                <div class="why-choose-item-title">Simplified Collaboration</div>
+                                <div class="why-choose-item-description">
+                                    Translate comments into multiple languages to facilitate understanding within international teams.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="carousel">
+                <div class="marquee">
+                    <div class="marquee_header">Powered by</div>
+                    <div class="marquee__inner">
+                        <div class="marquee__group">
+                            <div class="marquee-item"><img class="svg deepl-svg" data-src="/assets/deepl.svg"/><span class="text-marquee">DeepL</span></div>
+                            <div class="marquee-item"><img class="svg ollama-svg" data-src="/assets/ollama.svg"/><span class="text-marquee">Ollama</span></div>
+                            <div class="marquee-item"><img class="svg meta-svg" data-src="/assets/meta.svg"/><span class="text-marquee">Meta</span></div>
+                            <div class="marquee-item"><img class="svg google-svg" data-src="/assets/google.svg"/><span class="text-marquee">Google</span></div>
+                            <div class="marquee-item"><img class="svg alibabacloud-svg" data-src="/assets/alibabacloud.svg"/><span class="text-marquee">Alibaba Cloud</span></div>
+                        </div>
+                        <div class="marquee__group">
+                            <div class="marquee-item"><img class="svg deepl-svg" data-src="/assets/deepl.svg"/><span class="text-marquee">DeepL</span></div>
+                            <div class="marquee-item"><img class="svg ollama-svg" data-src="/assets/ollama.svg"/><span class="text-marquee">Ollama</span></div>
+                            <div class="marquee-item"><img class="svg meta-svg" data-src="/assets/meta.svg"/><span class="text-marquee">Meta</span></div>
+                            <div class="marquee-item"><img class="svg google-svg" data-src="/assets/google.svg"/><span class="text-marquee">Google</span></div>
+                            <div class="marquee-item"><img class="svg alibabacloud-svg" data-src="/assets/alibabacloud.svg"/><span class="text-marquee">Alibaba Cloud</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pricing" class="pricing">
+                <div class="pricing-header">
+                    <div class="pricing-title">
+                        <span class="pricing-title-text">
+                            <span class="littelang-text-highlight">LitteLang</span> Pricing
+                        </span>
+                    </div>
+                    <div class="pricing-subtitle">
+                        <span class="pricing-subtitle-text">
+                            Choose the plan that best fits your needs. No hidden fees. No subscription.
+                        </span>
+                        <div class="pricing-subtitle-info">
+                            <span class="pricing-subtitle-text info">
+                                The app is not code-signed. On macOS, you may need to allow it manually using the terminal command. Please read the FAQ.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing-grid">
+                    <div class="card-price">
+                        <span class="price-name">
+                        Solo
+                        </span>
+                        <span class="price">
+                        $ 4.99
+                        </span>
+                        <div class="lists">
+                            <li class="list active">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> One computer </span>
+                            </li>
+                            <li class="list active">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> Unlimited AI-powered translations </span>
+                            </li>
+                            <li class="list active">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> Unlimited AI comment enhancements </span>
+                            </li>
+                            <li class="list inactive">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> Support for up to 192 programming languages </span>
+                            </li>
+                            <li class="list inactive">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> Support for up to 28 human languages </span>
+                            </li>
+                            <li class="list inactive">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> macOS, Windows, Linux </span>
+                            </li>
+                        </div>
+                        <a href="https://buy.polar.sh/polar_cl_YrXoTBczRI5biuPdMMAWPTXJ0y9DydBD27jUx1gFwrM" class="action">
+                        Get started
+                        </a>
+                    </div>
+                    <div class="card-price">
+                        <span class="price-name">
+                        Dev team
+                        </span>
+                        <span class="price">
+                        $ 7.99
+                        </span>
+                        <div class="lists">
+                            <li class="list active">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> Three computers </span>
+                            </li>
+                            <li class="list active">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> Unlimited AI-powered translations </span>
+                            </li>
+                            <li class="list active">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> Unlimited AI comment enhancements </span>
+                            </li>
+                            <li class="list inactive">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> Support for up to 192 programming languages </span>
+                            </li>
+                            <li class="list inactive">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> Support for up to 28 human languages </span>
+                            </li>
+                            <li class="list inactive">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> macOS, Windows, Linux </span>
+                            </li>
+                        </div>
+                        <a href="https://buy.polar.sh/polar_cl_G0alQW4fGkCUs8wQSuFWHVuCoGrNlkd5YPgpu4EFL6z" class="action">
+                            Get started
+                        </a>
+                    </div>
+                    <div class="card-price best">
+                        <span class="price-name">
+                        Unlimited
+                        </span>
+                        <span class="price">
+                        $ 15.99
+                        </span>
+                        <div class="lists">
+                            <li class="list active">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> Unlimited installations </span>
+                            </li>
+                            <li class="list active">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> Unlimited AI-powered translations </span>
+                            </li>
+                            <li class="list active">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> Unlimited AI comment enhancements </span>
+                            </li>
+                            <li class="list inactive">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> Support for up to 192 programming languages </span>
+                            </li>
+                            <li class="list inactive">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> Support for up to 28 human languages </span>
+                            </li>
+                            <li class="list inactive">
+                                <img class="svg check-svg" data-src="assets/check.svg" alt="check">
+                                <span> macOS, Windows, Linux </span>
+                            </li>
+                        </div>
+                        <a href="https://buy.polar.sh/polar_cl_rxUcpeRLpytKvyOmrWwuYORN9h4CEeAr9tLP31aWptT" class="action">
+                            Get started
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section id="faq" class="faq">
+                <div class="faq-container">
+                    <div class="faq-header">
+                        <span class="faq-title">Frequently Asked Questions</span>
+                        <span class="faq-subtitle">Find answers to common questions about LitteLang.</span>
+                    </div>
+                    <div class="faq-content" id="faq-content"></div>
+                </div>
+            </section>
+        </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>Made with ❤️</p>
+            <p>&copy; 2025 LitteLang. All rights reserved.</p>
+        </footer>
+    </body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        history.replaceState(null, '', `#${id}`);
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+    <script src="js/inlineSVG.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navRight = document.querySelector('.navbar-right');
+
+            hamburger.addEventListener('click', function () {
+                navRight.classList.toggle('active');
+            });
+        });
+    </script>
+    <script>
+        const themeToggleInput = document.getElementById("themeToggle");
+
+        // Check localStorage for saved theme
+        const savedTheme = localStorage.getItem("theme");
+
+        // Detect system preference
+        const prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+
+        // Determine initial theme
+        const initialTheme = savedTheme || (prefersLight ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", initialTheme);
+
+        // Sync checkbox state
+        themeToggleInput.checked = initialTheme === "dark";
+
+        // Listen for changes
+        themeToggleInput.addEventListener("change", () => {
+            const isDarkMode = themeToggleInput.checked;
+            const newTheme = isDarkMode ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", newTheme);
+
+            // Save user preference
+            localStorage.setItem("theme", newTheme);
+        });
+    </script>
+    <script>
+        const questions = [
+            {
+                id: 1,
+                question: "Why isn't the app signed? Should I be worried?",
+                answer: "No worries, LitteLang isn't signed because code signing (especially for Apple) is a maze of fees and bureaucracy we'd rather skip to keep things indie and affordable. Pinky promise it's clean, your OS is just being a little dramatic."
+            },
+            {
+                id: 2,
+                question: "The app won't open on my Mac/Windows! What gives?",
+                answer: "Mac: Run this in Terminal to calm your Mac down: `xattr -d com.apple.quarantine /Applications/LitteLang.app`. Windows: Click 'More Info' and then 'Run anyway'. Trust us, it's not haunted."
+            },
+            {
+                id: 3,
+                question: "Is this a subscription?",
+                answer: "Nope. One-time payment. No monthly fees. No sneaky renewals. Just buy it, use it, and enjoy the sweet silence of a credit card bill that won't bite you next month."
+            },
+            {
+                id: 4,
+                question: "Where can I find my DeepL API key?",
+                answer: "You can grab your key over at: https://www.deepl.com/en/your-account/keys, it's free for small usage, and worth it if you want silky-smooth translations."
+            },
+            {
+                id: 5,
+                question: "Do I need Ollama installed?",
+                answer: "Yes! Ollama is what lets LitteLang run AI models locally, keeping your data private. Download it here: https://ollama.com/download. It's like a brain for your desktop, but friendlier."
+            },
+            {
+                id: 6,
+                question: "How can I deactivate my license?",
+                answer: "You can either do it from within the app (in Settings), or head over to: https://polar.sh/litterabbit/portal/request, fast, simple, and no breakup guilt."
+            },
+            {
+                id: 7,
+                question: "Does LitteLang store any of my data?",
+                answer: "Nope. Nada. Zilch. Everything stays on your machine unless you choose to send it through DeepL's API. We like privacy, like, a lot."
+            },
+            {
+                id: 8,
+                question: "Found a bug? Need help?",
+                answer: "Come say hi (or scream for help) on our Discord: https://discord.gg/F5WE7MFTTQ. We're friendly, nerdy, and mostly human."
+            }
+        ];
+
+        const faqContainer = document.getElementById('faq-content');
+
+        function renderFAQ(data) {
+            faqContainer.innerHTML = '';
+            data.forEach(item => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'question-wrapper';
+
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.id = `question-${item.id}`;
+
+                const h3 = document.createElement('span');
+                h3.textContent = item.question;
+
+                const button = document.createElement('button');
+                button.innerHTML = `
+                    <svg viewBox="0 0 320 512" width="100" title="angle-down">
+                        <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                    </svg>
+                `;
+
+                const answerDiv = document.createElement('div');
+                answerDiv.className = 'answer';
+
+                // Parse `command` style and links
+                let parsedAnswer = item.answer
+                    .replace(/`([^`]+)`/g, '<code>$1</code>')
+                    .replace(/(https?:\/\/[^\s<>"']*[^.,;!?\s<>"'])/g, '<a href="$1" target="_blank">$1</a>');
+
+                answerDiv.innerHTML = parsedAnswer;
+
+                questionDiv.addEventListener('click', () => {
+                    answerDiv.classList.toggle('active');
+                    button.querySelector('svg').classList.toggle('active');
+                });
+
+                questionDiv.appendChild(h3);
+                questionDiv.appendChild(button);
+                wrapper.appendChild(questionDiv);
+                wrapper.appendChild(answerDiv);
+                faqContainer.appendChild(wrapper);
+            });
+        }
+
+        // Initialisation
+        renderFAQ(questions);
+    </script>
+    <script>
+        inlineSVG.init({
+            svgSelector: "img.svg", // the class attached to all images that should be inlined
+            initClass: "js-inlinesvg", // class added to <html>
+        });
+    </script>
+</html>

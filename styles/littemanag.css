@@ -1,0 +1,260 @@
+:root[data-theme="dark"] {
+    --bg-dark: hsl(0, 0%, 3.9%);
+    --bg: hsl(0, 0%, 10.6%);
+    --bg-light: hsl(0, 0%, 17%);
+    --text: hsl(0, 0%, 95.7%);
+    --text-muted: hsl(0, 0%, 73.7%);
+    --stoke: hsl(0, 0%, 44.7%);
+    --highlight: hsl(253, 81%, 56%);
+    --highlightDarker: hsl(253, 81%, 24%);
+    --danger: hsl(354, 76%, 44%);
+}
+
+:root[data-theme="light"] {
+    --bg-dark: hsl(0, 0%, 83%);
+    --bg: hsl(0, 0%, 89.4%);
+    --bg-light: hsl(0, 0%, 96.1%);
+    --text: hsl(0, 0%, 4.3%);
+    --text-muted: hsl(0, 0%, 26.3%);
+    --stoke: hsl(0, 0%, 55.3%);
+    --highlight: hsl(253, 81%, 56%);
+    --highlightDarker: hsl(253, 81%, 76%);
+    --danger: hsl(354, 92%, 66%);
+}
+
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Source code pro", monospace;
+    font-weight: 400;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: auto;
+    background-image: conic-gradient(from 0deg, var(--bg), var(--highlightDarker), var(--bg));
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: var(--bg);
+}
+
+/* ========= Header Section ========= */
+.app-header {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 0 16px;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.header-left,
+.header-center,
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-left {
+    flex: 0 0 auto;
+}
+.header-center {
+    flex: 1 1 auto;
+    justify-content: center;
+}
+.header-right {
+    flex: 0 0 auto;
+}
+
+/* ========= Navbar Section ========= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+    height: 50px;
+    width: 100%;
+    max-width: 600px; /* Optional for layout control */
+    border: solid 1px var(--stroke);
+    border-radius: 30px;
+    background-color: transparent;
+    box-shadow: 0px 0px 40px -22px var(--text) inset;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    z-index: 1500;
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-logo-name {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.navbar-logo-name svg {
+    width: 30px;
+}
+
+.navbar-logo-name path {
+    fill: var(--text);
+}
+
+.navbar-logo-name svg:hover {
+    rotate: 360deg;
+    transition: rotate 0.5s ease-in-out;
+}
+
+.navbar-logo-text {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.site-link a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.site-link:hover a {
+    color: var(--highlight);
+}
+
+/* ========= Buy Button ========= */
+#button-buy {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 30px;
+    color: var(--bg);
+    background: var(--highlight);
+    border: none;
+    font-weight: 800;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#button-buy:hover {
+    box-shadow: 7px 5px 56px -4px var(--highlight);
+}
+
+#button-buy:active {
+    transform: scale(0.97);
+    box-shadow: 7px 5px 56px -10px var(--highlight);
+}
+
+main {
+    flex: 1 0 auto;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    padding: 0;
+}
+
+footer {
+    width: 100%;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: auto;
+    z-index: 100;
+    background: none;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    pointer-events: none;
+}
+
+/* ========= Bugged Counter ========= */
+.digit {
+    display: inline-block;
+    width: 1ch;
+    font-family: "Fira Mono", "Consolas", "Menlo", "Courier", monospace;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.15s;
+}
+
+.container {
+    color: var(--text);
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-weight: normal;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+}
+
+li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+}
+
+li span {
+    display: block;
+    font-size: 4.5rem;
+}
+
+.emoji {
+    display: none;
+    padding: 1rem;
+}
+
+.emoji span {
+    font-size: 4rem;
+    padding: 0 0.5rem;
+}
+
+@media all and (max-width: 768px) {
+    h1 {
+        font-size: calc(1.5rem * var(--smaller));
+    }
+
+    li {
+        font-size: calc(1.125rem * var(--smaller));
+    }
+
+    li span {
+        font-size: calc(3.375rem * var(--smaller));
+    }
+}

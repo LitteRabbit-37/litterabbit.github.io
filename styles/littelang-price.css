@@ -1,0 +1,152 @@
+.pricing {
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.pricing-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pricing-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pricing-title-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.pricing-subtitle {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.pricing-subtitle-text {
+    max-width: 300px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.pricing-subtitle-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.pricing-subtitle-text.info {
+    max-width: 500px;
+    color: var(--danger);
+}
+
+.pricing-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-price {
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: var(--bg);
+    padding: 20px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+}
+
+.price-name {
+    align-self: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 40px;
+    line-height: 1;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.card-price.best {
+    background-color: var(--highlight);
+}
+
+.card-price.best .price-name,
+.card-price.best .price,
+.card-price.best li {
+    color: var(--bg);
+}
+
+.card-price.best .list svg {
+    stroke: var(--bg);
+}
+
+.lists {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 12px;
+    color: var(--text);
+}
+
+.list {
+    display: flex;
+    align-items: center;
+}
+
+.list svg {
+    height: 16px;
+    width: 16px;
+    stroke: var(--text);
+}
+
+li {
+    gap: 10px;
+}
+
+.action {
+    margin-top: 40px;
+    width: calc(100% - 20px);
+    border: 2px solid var(--stroke);
+    border-radius: 20px;
+    background-color: var(--bg-light);
+    padding: 10px 10px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text);
+    outline: none;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.action:hover {
+    color: var(--bg-light);
+    background-color: var(--text);
+}

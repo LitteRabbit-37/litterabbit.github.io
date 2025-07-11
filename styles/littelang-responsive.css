@@ -1,0 +1,170 @@
+/* =============================================================== */
+/* ========= Responsive Design ========= */
+/* =============================================================== */
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 2000;
+    margin-right: 10px;
+}
+
+.hamburger-line {
+    width: 20px;
+    height: 2px;
+    background-color: var(--text);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+
+@media screen and (max-width: 1024px) {
+    .features {
+        height: auto;
+        padding: 60px 0;
+    }
+
+    .features-card {
+        width: 90%;
+        height: auto;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "b e e"
+            "d e e"
+            "a c f";
+        gap: 15px;
+    }
+
+    .feature-item {
+        min-height: 200px;
+    }
+
+    .feature-e {
+        min-height: 500px;
+        padding-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* --- Header & Navbar --- */
+    .app-header {
+        padding: 0 16px;
+        gap: 16px;
+    }
+
+    /* Let nav fill the space between back button and theme toggle */
+    .header-center {
+        flex-grow: 1;
+    }
+    nav {
+        justify-content: space-between;
+    }
+
+    .navbar-logo-text {
+        display: none;
+    }
+
+    .navbar-links,
+    .navbar-buttons {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    /* --- Active Mobile Menu --- */
+    .navbar-right.active .navbar-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: var(--bg);
+        border: 1px solid var(--stroke);
+        border-radius: 10px;
+        padding: 15px;
+        width: 100px;
+        gap: 15px;
+        box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.3);
+        z-index: 1500;
+    }
+
+    .navbar-right.active .navbar-buttons {
+        display: block;
+        width: 100%;
+    }
+    .navbar-right.active #button-buy {
+        width: 100%;
+    }
+
+    /* --- Hero Section --- */
+    .hero-title {
+        font-size: 48px;
+        max-width: 90%;
+    }
+    .hero-keywords {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* --- Features Grid --- */
+    .features-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "a"
+            "b"
+            "c"
+            "d"
+            "e"
+            "f";
+    }
+
+    .feature-e {
+        min-height: 550px;
+    }
+
+    .why-choose-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .why-choose-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        width: 100%;
+    }
+
+    .why-choose-text {
+        text-align: center;
+    }
+
+    .why-choose-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+        width: 100%;
+        justify-items: center;
+    }
+
+    .carousel {
+        display: none;
+    }
+
+    .faq-container {
+        width: 100%;
+    }
+}
