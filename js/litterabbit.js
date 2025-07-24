@@ -14,7 +14,7 @@ const closeWhyModal = document.getElementById("close-why-modal");
 const ourApp = document.getElementById("ourApp-modal");
 const closeOurAppModal = document.getElementById("close-ourApp-modal");
 
-// --- Modal WHY ---
+// --- Modal OUR APP ---
 appsBtn.addEventListener("click", () => {
     ourApp.style.display = "flex";
 });
@@ -25,7 +25,7 @@ closeOurAppModal.addEventListener("click", () => {
     }, 240);
 });
 
-// --- Modal OUR APP ---
+// --- Modal WHY ---
 whyBtn.addEventListener("click", () => {
     whyModal.style.display = "flex";
 });
