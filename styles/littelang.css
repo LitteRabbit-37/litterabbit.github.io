@@ -1,10 +1,4 @@
 :root[data-theme="dark"] {
-    --bg-dark: hsl(0, 0%, 3.9%);
-    --bg: hsl(0, 0%, 10.6%);
-    --bg-light: hsl(0, 0%, 17%);
-    --text: hsl(0, 0%, 95.7%);
-    --text-muted: hsl(0, 0%, 73.7%);
-    --stoke: hsl(0, 0%, 44.7%);
     --highlight: hsl(73, 69.4%, 52.7%);
     --highlightDarker: hsl(73, 50.4%, 22.7%);
     --kw: hsl(276, 68%, 75%); /* mots-clés     */
@@ -17,16 +11,9 @@
     --bg-commentsCard-layer: hsla(0, 0%, 23%, 0.39);
     --bg-codeCard-layer: hsla(0, 0%, 27%, 0.79);
     --bg-commentsCardHover-layer: hsla(0, 0%, 80%, 0.39);
-    --danger: hsl(354, 76%, 44%);
 }
 
 :root[data-theme="light"] {
-    --bg-dark: hsl(0, 0%, 83%);
-    --bg: hsl(0, 0%, 89.4%);
-    --bg-light: hsl(0, 0%, 96.1%);
-    --text: hsl(0, 0%, 4.3%);
-    --text-muted: hsl(0, 0%, 26.3%);
-    --stoke: hsl(0, 0%, 55.3%);
     --highlight: hsl(73, 89%, 40%);
     --highlightDarker: hsl(73, 45%, 60%);
     --kw: hsl(276, 68%, 25%); /* mots-clés     */
@@ -39,7 +26,6 @@
     --bg-commentsCard-layer: hsla(0, 0%, 77%, 0.39);
     --bg-codeCard-layer: hsla(0, 0%, 73%, 0.79);
     --bg-commentsCardHover-layer: hsla(0, 0%, 20%, 0.39);
-    --danger: hsl(354, 92%, 66%);
 }
 
 html,

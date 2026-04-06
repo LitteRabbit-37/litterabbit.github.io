@@ -5,17 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Studio Brightness ++</title>
         <link rel="icon" href="assets/studio-brightness-plusplus.ico" type="ico" />
+        <link rel="stylesheet" href="styles/variables.css" />
         <link rel="stylesheet" href="styles/studio-brightness-plus-plus.css" />
         <link rel="stylesheet" href="styles/littemanag-responsive.css" />
         <link rel="stylesheet" href="styles/theme-toggle.css" />
-        <link rel="stylesheet" href="styles/rain.css" />
+
         <link rel="stylesheet" href="styles/background-theme.css" />
     </head>
     <body>
         <div class="background">
             <div id="slider">
-                <img src="assets/studio_bg1.png" alt="Studio Display day" />
-                <img src="assets/studio_bg2.png" alt="Studio Display night" />
+                <img src="assets/studio_bg1.webp" alt="Studio Display day" />
+                <img src="assets/studio_bg2.webp" alt="Studio Display night" />
             </div>
         </div>
         <!-- Navbar -->
@@ -132,27 +133,6 @@
                         <div class="glass-filter"></div>
                         <div class="glass-overlay"></div>
                         <div class="glass-specular"></div>
-
-                        <!-- SVG FILTER DEFINITION -->
-                        <svg style="display: none">
-                            <filter id="lg-dist" x="0%" y="0%" width="100%" height="100%">
-                                <feTurbulence
-                                    type="fractalNoise"
-                                    baseFrequency="0.008 0.008"
-                                    numOctaves="2"
-                                    seed="92"
-                                    result="noise"
-                                />
-                                <feGaussianBlur in="noise" stdDeviation="2" result="blurred" />
-                                <feDisplacementMap
-                                    in="SourceGraphic"
-                                    in2="blurred"
-                                    scale="70"
-                                    xChannelSelector="R"
-                                    yChannelSelector="G"
-                                />
-                            </filter>
-                        </svg>
                     </div>
                 </div>
             </div>
@@ -191,6 +171,7 @@
             </div>
         </main>
     </body>
+    <script src="js/theme.js"></script>
     <script src="js/inlineSVG.min.js"></script>
     <script>
         inlineSVG.init({
@@ -212,8 +193,7 @@
             }, 240);
         });
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="js/imageTransition.js"></script>
 </html>

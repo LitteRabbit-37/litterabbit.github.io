@@ -18,11 +18,11 @@ const displacementSlider = function (opts) {
     void main() {
       vec2 uv = vUv;
       float intensity = 0.3;
-      vec4 orig1 = texture2D(currentImage, uv);
-      vec4 orig2 = texture2D(nextImage,   uv);
-      vec4 _c = texture2D(currentImage, vec2(uv.x, uv.y + dispFactor * (orig2 * intensity)));
-      vec4 _n = texture2D(nextImage,    vec2(uv.x, uv.y + (1.0 - dispFactor) * (orig1 * intensity)));
-      gl_FragColor = mix(_c, _n, dispFactor);
+      vec4 colA = texture2D(currentImage, uv);
+      vec4 colB = texture2D(nextImage, uv);
+      vec2 uvA = vec2(uv.x, uv.y + dispFactor * colB.r * intensity);
+      vec2 uvB = vec2(uv.x, uv.y + (1.0 - dispFactor) * colA.r * intensity);
+      gl_FragColor = mix(texture2D(currentImage, uvA), texture2D(nextImage, uvB), dispFactor);
     }
   `;
 
@@ -63,6 +63,9 @@ const displacementSlider = function (opts) {
     const mesh = new THREE.Mesh(geo, mat);
     scene.add(mesh);
 
+    // --- render on demand (no continuous 60fps loop)
+    let needsRender = true;
+
     // --- dynamic resizing to maintain ratio & cover
     const onResize = () => {
         const width = window.innerWidth;
@@ -92,17 +95,20 @@ const displacementSlider = function (opts) {
 
         // 4) apply the scale
         mesh.scale.set(scaleX, scaleY, 1);
+        needsRender = true;
     };
 
     window.addEventListener("resize", onResize);
     onResize(); // initial call
 
-    // --- animation loop
-    const animate = () => {
-        requestAnimationFrame(animate);
-        renderer.render(scene, camera);
+    const renderOnce = () => {
+        if (needsRender) {
+            renderer.render(scene, camera);
+            needsRender = false;
+        }
+        requestAnimationFrame(renderOnce);
     };
-    animate();
+    renderOnce();
 
     // --- transition method (0 → day, 1 → night)
     let isAnimating = false;
@@ -113,13 +119,16 @@ const displacementSlider = function (opts) {
         mat.uniforms.nextImage.value = i === 0 ? texA : texB;
         mat.uniforms.nextImage.needsUpdate = true;
 
-        TweenLite.to(mat.uniforms.dispFactor, 1, {
+        gsap.to(mat.uniforms.dispFactor, {
             value: 1,
-            ease: "Expo.easeInOut",
+            duration: 1,
+            ease: "expo.inOut",
+            onUpdate: () => { needsRender = true; },
             onComplete: () => {
                 mat.uniforms.currentImage.value = i === 0 ? texA : texB;
                 mat.uniforms.currentImage.needsUpdate = true;
                 mat.uniforms.dispFactor.value = 0;
+                needsRender = true;
                 isAnimating = false;
             },
         });

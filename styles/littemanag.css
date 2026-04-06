@@ -1,25 +1,11 @@
 :root[data-theme="dark"] {
-    --bg-dark: hsl(0, 0%, 3.9%);
-    --bg: hsl(0, 0%, 10.6%);
-    --bg-light: hsl(0, 0%, 17%);
-    --text: hsl(0, 0%, 95.7%);
-    --text-muted: hsl(0, 0%, 73.7%);
-    --stoke: hsl(0, 0%, 44.7%);
     --highlight: hsl(253, 81%, 56%);
     --highlightDarker: hsl(253, 81%, 24%);
-    --danger: hsl(354, 76%, 44%);
 }
 
 :root[data-theme="light"] {
-    --bg-dark: hsl(0, 0%, 83%);
-    --bg: hsl(0, 0%, 89.4%);
-    --bg-light: hsl(0, 0%, 96.1%);
-    --text: hsl(0, 0%, 4.3%);
-    --text-muted: hsl(0, 0%, 26.3%);
-    --stoke: hsl(0, 0%, 55.3%);
     --highlight: hsl(253, 81%, 56%);
     --highlightDarker: hsl(253, 81%, 76%);
-    --danger: hsl(354, 92%, 66%);
 }
 
 html,

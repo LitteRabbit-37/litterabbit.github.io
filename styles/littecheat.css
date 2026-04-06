@@ -1,0 +1,255 @@
+/* ==========================================================
+   LitteCheat — Dark terminal + pixel grid overlay
+   ========================================================== */
+
+:root, :root[data-theme="dark"] {
+    --highlight: hsl(120, 100%, 40%);
+    --highlightDarker: hsl(120, 100%, 20%);
+    --cheat-bg: #0a0a0a;
+    --cheat-text: #FFF0C3;
+    --cheat-muted: rgba(255, 240, 195, 0.5);
+    --cheat-border: rgba(255, 255, 255, 0.12);
+    --cheat-card-bg: #101114;
+    --cheat-hover: rgba(255, 255, 255, 0.06);
+    --grid-line: rgba(255, 255, 255, 0.10);
+}
+
+/* ========== BASE ========== */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    background: var(--cheat-bg);
+    color: var(--cheat-text);
+    font-family: "Fragment Mono", "Consolas", "Courier New", Courier, monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* ========== GRID OVERLAY (CRT screen effect) ========== */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    background-image:
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 4px 4px;
+}
+
+/* ========== CONTAINER ========== */
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ========== NAV ========== */
+.cheat-nav {
+    padding: 1.5rem 0;
+}
+
+.back-link {
+    color: var(--cheat-muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--highlight);
+}
+
+.back-link kbd {
+    display: inline-block;
+    font-family: inherit;
+    font-size: 11px;
+    color: var(--cheat-text);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    padding: 1px 6px;
+    margin-right: 4px;
+}
+
+/* ========== PIXEL ART BANNER ========== */
+.pixel-art {
+    padding: 2rem 0 0;
+    overflow: hidden;
+}
+
+.pixel-art pre {
+    margin: 0;
+    font-family: monospace;
+    white-space: pre;
+    font-size: 4px;
+    line-height: 1.4;
+    user-select: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.pixel-art pre.visible {
+    opacity: 1;
+}
+
+.pixel-row-1 { color: #39FF14; }
+.pixel-row-2 { color: #30E612; }
+.pixel-row-3 { color: #27CC10; }
+.pixel-row-4 { color: #1EB30E; }
+.pixel-row-5 { color: #15990C; }
+.pixel-row-6 { color: #0C800A; }
+.pixel-row-7 { color: #086608; }
+.pixel-row-8 { color: #044D06; }
+.pixel-row-9 { color: #003300; }
+
+@media (min-width: 768px) {
+    .pixel-art pre { font-size: 6px; line-height: 1.2; }
+}
+@media (min-width: 1024px) {
+    .pixel-art pre { font-size: 10px; line-height: 1.2; }
+}
+
+/* ========== TERMINAL WINDOW ========== */
+.terminal {
+    margin: 2rem 0 0;
+    border: 1px solid var(--cheat-border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    min-height: 420px;
+}
+
+.terminal-chrome {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid var(--cheat-border);
+    flex-shrink: 0;
+}
+
+.terminal-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.terminal-dot.red    { background: #ff5f57; }
+.terminal-dot.yellow { background: #febc2e; }
+.terminal-dot.green  { background: #28c840; }
+
+.terminal-title {
+    margin-left: 8px;
+    font-size: 11px;
+    color: var(--cheat-muted);
+}
+
+.terminal-body {
+    padding: 1.5rem;
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.15) transparent;
+}
+
+/* ========== TERMINAL OUTPUT ========== */
+.t-line {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--cheat-text);
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.t-line .prompt {
+    color: var(--highlight);
+    margin-right: 8px;
+}
+
+.t-line .hl {
+    color: var(--highlight);
+}
+
+.t-line .muted {
+    color: var(--cheat-muted);
+}
+
+.t-line .err {
+    color: #ff5f57;
+}
+
+.t-line .warn {
+    color: #febc2e;
+}
+
+.t-line .name {
+    color: var(--cheat-text);
+}
+
+.t-line .meta-key {
+    color: var(--highlight);
+}
+
+.t-line a {
+    color: var(--highlight);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.t-line a:hover {
+    opacity: 0.8;
+}
+
+/* ========== INPUT LINE ========== */
+.input-line {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.input-line .prompt {
+    color: var(--highlight);
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+#terminal-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--cheat-text);
+    font-family: inherit;
+    font-size: 13px;
+    caret-color: var(--highlight);
+    padding: 0;
+}
+
+
+/* ========== FOOTER ========== */
+.cheat-footer {
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 12px;
+    color: var(--cheat-muted);
+    border-top: 1px solid var(--cheat-border);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 640px) {
+    .game-card .card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

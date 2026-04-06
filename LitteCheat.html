@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>LitteCheat</title>
+        <link rel="icon" href="assets/litterabbit_logo.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="styles/variables.css" />
+        <link rel="stylesheet" href="styles/littecheat.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Nav -->
+            <nav class="cheat-nav">
+                <a href="index.html" class="back-link"><kbd>esc</kbd> Return Home</a>
+            </nav>
+
+            <!-- Pixel Art Banner -->
+            <div class="pixel-art">
+<pre class="pixel-row-1">████████████████████████████████████████████████████████████████████████████████████████████████████████████</pre>
+<pre class="pixel-row-2">████████████████████████████████████████████████████████████████████████████████████████████████████████████</pre>
+<pre class="pixel-row-3">████████████████████████████████████████████████████████████████████████████████████████████████████████████</pre>
+<pre class="pixel-row-4">████████████████████████████████████████████████████████████████████████████████████████████████████████████</pre>
+<pre class="pixel-row-5">████████████████████████████████████████████████████████████████████████████████████████████████████████████</pre>
+<pre class="pixel-row-6">████████████████████████████████████████████████████████████████████████████████████████████████████████████</pre>
+<pre class="pixel-row-7">████████████████████████████████████████████████████████████████████████████████████████████████████████████</pre>
+<pre class="pixel-row-8">████████████████████████████████████████████████████████████████████████████████████████████████████████████</pre>
+<pre class="pixel-row-9">████████████████████████████████████████████████████████████████████████████████████████████████████████████</pre>
+            </div>
+
+            <!-- Interactive Terminal -->
+            <section class="terminal">
+                <div class="terminal-chrome">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                    <span class="terminal-title">littecheat — bash</span>
+                </div>
+                <div class="terminal-body" id="terminal-body">
+                    <div id="terminal-output"></div>
+                    <div class="input-line">
+                        <span class="prompt">$</span>
+                        <input type="text" id="terminal-input" autocomplete="off" autocapitalize="off" spellcheck="false" autofocus />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="cheat-footer">
+                LitteRabbit &mdash; All mods are for solo/offline use only.
+            </footer>
+        </div>
+
+        <script src="js/pixelgrid.js"></script>
+        <script src="js/terminal.js"></script>
+    </body>
+</html>

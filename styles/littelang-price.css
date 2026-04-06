@@ -1,4 +1,4 @@
-.pricing {
+.opensource {
     margin-top: 60px;
     width: 100%;
     display: flex;
@@ -8,7 +8,7 @@
     gap: 40px;
 }
 
-.pricing-header {
+.opensource-header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,19 +16,19 @@
     gap: 20px;
 }
 
-.pricing-title {
+.opensource-title {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.pricing-title-text {
+.opensource-title-text {
     font-size: 24px;
     font-weight: 600;
     color: var(--text);
 }
 
-.pricing-subtitle {
+.opensource-subtitle {
     max-width: 500px;
     display: flex;
     flex-direction: column;
@@ -38,27 +38,14 @@
     gap: 15px;
 }
 
-.pricing-subtitle-text {
+.opensource-subtitle-text {
     max-width: 300px;
     font-size: 14px;
     font-weight: 400;
     color: var(--text-muted);
 }
 
-.pricing-subtitle-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 5px;
-}
-
-.pricing-subtitle-text.info {
-    max-width: 500px;
-    color: var(--danger);
-}
-
-.pricing-grid {
+.opensource-grid {
     display: flex;
     flex-direction: row;
     gap: 30px;
@@ -66,44 +53,38 @@
     justify-content: center;
 }
 
-.card-price {
+.card-oss {
     max-width: 320px;
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-    background-color: var(--bg);
+    background-color: var(--highlight);
     padding: 20px;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
 }
 
-.price-name {
+.oss-name {
     align-self: center;
     font-size: 20px;
     font-weight: 700;
-    color: var(--text);
+    color: var(--bg);
     margin-bottom: 10px;
 }
 
-.price {
+.oss-badge {
     font-size: 40px;
     line-height: 1;
     font-weight: 600;
-    color: var(--text);
+    color: var(--bg);
     margin-bottom: 30px;
     margin-top: 10px;
 }
 
-.card-price.best {
-    background-color: var(--highlight);
-}
-
-.card-price.best .price-name,
-.card-price.best .price,
-.card-price.best li {
+.card-oss li {
     color: var(--bg);
 }
 
-.card-price.best .list svg {
+.card-oss .list svg {
     stroke: var(--bg);
 }
 

@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>LitteManag</title>
         <link rel="icon" href="assets/littemanag_logo.png" type="image/png" />
+        <link rel="stylesheet" href="styles/variables.css" />
         <link rel="stylesheet" href="styles/littemanag.css" />
         <link rel="stylesheet" href="styles/littemanag-responsive.css" />
         <link rel="stylesheet" href="styles/theme-toggle.css" />
@@ -175,34 +176,7 @@
         </footer>
     </body>
     <script src="js/inlineSVG.min.js"></script>
-    <script>
-        const themeToggleInput = document.getElementById("themeToggle");
-
-        // Check localStorage for saved theme
-        const savedTheme = localStorage.getItem("theme");
-
-        // Detect system preference
-        const prefersLight =
-            window.matchMedia &&
-            window.matchMedia("(prefers-color-scheme: light)").matches;
-
-        // Determine initial theme
-        const initialTheme = savedTheme || (prefersLight ? "light" : "dark");
-        document.documentElement.setAttribute("data-theme", initialTheme);
-
-        // Sync checkbox state
-        themeToggleInput.checked = initialTheme === "dark";
-
-        // Listen for changes
-        themeToggleInput.addEventListener("change", () => {
-            const isDarkMode = themeToggleInput.checked;
-            const newTheme = isDarkMode ? "dark" : "light";
-            document.documentElement.setAttribute("data-theme", newTheme);
-
-            // Save user preference
-            localStorage.setItem("theme", newTheme);
-        });
-    </script>
+    <script src="js/theme.js"></script>
     <script src="js/littemanag.js"></script>
     <script>
         inlineSVG.init({
