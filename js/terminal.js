@@ -1,23 +1,26 @@
 (function () {
     // =========================================================================
     // Games database — edit this to add/remove mods
+    //
+    // Fields:
+    //   name      — Display name
+    //   desc      — Short description
+    //   tags      — Array: Singleplayer, Open Source, Mod Menu, QoL, Trainer,
+    //               Dev-Approved, Unity, Unreal, Godot, etc.
+    //   version   — Semver string
+    //   status    — Stable | Beta | In Development | Archived
+    //   license   — AGPL-3.0 | GPL-3.0 | MIT | Apache-2.0
+    //   github    — Repo URL
     // =========================================================================
     var GAMES = {
-        "game-title": {
-            name: "Game Title",
-            desc: "Mod menu adding extra features: infinite resources, speed control, free camera, and more. Built with permission from the developer.",
-            tags: ["Singleplayer", "Open Source"],
-            version: "1.2.0",
+        "phantom-DFB": {
+            name: "Dead from Behind",
+            desc: "Mod menu adding extra features: ESP, Aimbot. Built with permission from the developer.",
+            tags: ["Singleplayer", "Open Source", "Mod Menu", "Dev-Approved"],
+            version: "1.0.0",
             status: "Stable",
-            github: "https://github.com/LitteRabbit-37/game-title-mod",
-        },
-        "another-game": {
-            name: "Another Game",
-            desc: "Custom mod menu with developer tools, debug overlay, and gameplay tweaks for solo play.",
-            tags: ["Singleplayer", "Open Source", "WIP"],
-            version: "0.4.1",
-            status: "In Development",
-            github: "https://github.com/LitteRabbit-37/another-game-mod",
+            license: "AGPL-3.0",
+            github: "https://github.com/LitteRabbit-37/Phantom-DFB",
         },
     };
 
@@ -82,9 +85,11 @@
         var keys = Object.keys(GAMES);
         for (var i = 0; i < keys.length; i++) {
             var g = GAMES[keys[i]];
-            var status = g.status === "Stable" ? '<span class="hl">[STABLE]</span>' : '<span class="warn">[WIP]</span>';
-            print("  " + status + " <span class='name'>" + esc(g.name) + "</span>");
-            print('         <span class="muted">id: ' + esc(keys[i]) + " &middot; v" + esc(g.version) + "</span>");
+            var statusMap = { "Stable": "hl", "Beta": "warn", "In Development": "warn", "Archived": "muted" };
+            var cls = statusMap[g.status] || "muted";
+            var tag = g.status === "Stable" ? "STABLE" : g.status === "Beta" ? "BETA" : g.status === "Archived" ? "ARCHIVED" : "WIP";
+            print('  <span class="' + cls + '">[' + tag + ']</span> <span class="name">' + esc(g.name) + "</span>");
+            print('         <span class="muted">id: ' + esc(keys[i]) + " &middot; v" + esc(g.version) + " &middot; " + esc(g.license || "MIT") + "</span>");
         }
         printBlank();
         print('<span class="muted">Use: info &lt;id&gt; for details</span>');
@@ -110,6 +115,7 @@
         print("  " + esc(g.desc));
         printBlank();
         print('  <span class="meta-key">█░ Status:</span>   ' + esc(g.status));
+        print('  <span class="meta-key">█░ License:</span>  ' + esc(g.license || "MIT"));
         print('  <span class="meta-key">█░ Tags:</span>     ' + esc(g.tags.join(", ")));
         print('  <span class="meta-key">█░ GitHub:</span>   <a href="' + esc(g.github) + '" target="_blank">' + esc(g.github) + "</a>");
         printBlank();
@@ -139,7 +145,7 @@
         print('<span class="meta-key">█░ Author:</span>    LitteRabbit');
         print('<span class="meta-key">█░ Category:</span>  Mod Menus');
         print('<span class="meta-key">█░ Platform:</span>  PC');
-        print('<span class="meta-key">█░ License:</span>   MIT / Apache 2.0');
+        print('<span class="meta-key">█░ License:</span>   AGPL-3.0 (default)');
         printBlank();
     };
 
